@@ -1,0 +1,6 @@
+clock
+flock
+flack
+clack
+click
+hello
