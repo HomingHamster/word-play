@@ -1,0 +1,32 @@
+var startWord IS <input word>
+var ladderLength IS <input length of required ladder>
+
+find dictionary with the correct amount of letters in. (assumed five for example)
+
+
+STEP 1
+findall
+
+stepList IS find words that are in exactly 4 of 5 the lists.
+
+if stepCount is equal to one less than LadderLength:
+    add  first stepList element to ladder
+    BREAK -- complete
+
+if stepList length is less than one,
+    BREAK -- failed
+else:
+    increase stepCount
+    continue to next step
+
+for every WORD in stepList:
+    repeat step
+
+output Word Ladder ladder
+OR
+output Not possible.
+
+FUNCITON findallwords:
+fistLetterList IS find all words with the same first letter
+secondLetterList IS find all words with the same second letter
+etc.

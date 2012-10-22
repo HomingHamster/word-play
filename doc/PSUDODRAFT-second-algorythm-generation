@@ -1,0 +1,28 @@
+var startWord IS <input word>
+var ladderLength IS <input length of required ladder>
+
+find dictionary with the correct amount of letters in. (assumed five for example)
+
+
+STEP 1
+if Ladder length is equal to LadderLength:
+    BREAK -- complete
+
+currentword = last element in ladder
+
+for each WORD with the correct first letter:
+    if all but one letters are correct:
+        add to ladder
+        restart step 1
+
+if above fails:
+    loop again with second letter:
+        if all but one letters are correct:
+            add to ladder
+            restart step 1
+else -- not possible
+
+output Word Ladder ladder
+OR
+output Not possible.
+
