@@ -1,0 +1,39 @@
+var beginLadder IS <input word>
+var ladderLength IS <input length of required ladder>
+
+Assumes precalulated graph for each length of word
+find graph with the correct amount of letters in. (assumed five for example)
+
+
+STEP 1
+for word attached to first word:
+    topChoice IS word
+    
+init wordStack
+FUNCTION findLadder TAKES startWord, stepsLeft
+    output = null
+    if 0 < stepsLeft:
+        if startWord's linked word list is empty:
+            FAIL
+        
+        for word in startWord's list of associated words:
+            if startWord is equal to word:
+                SKIP (this iteration)
+            for each stackWord currently in stack:
+                if word IS stackWord:
+                    SKIP (this iteration)
+                
+            push word to stack wordStack
+            findLadder GIVE word and stepsLeft -1
+    else if 0 = steps:
+        save in hashtable (?)
+                number of steps and list of words.
+
+    return output
+        
+
+
+output Word Ladder ladder
+OR
+output Not possible.
+
