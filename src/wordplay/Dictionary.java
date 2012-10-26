@@ -18,15 +18,18 @@ import java.util.ArrayList;
  */
 public class Dictionary {
     //maybe a hashtable of hashtables is going a bit far?
-    private Hashtable dictionaries = new Hashtable();
+    private Hashtable dictionaries = new Hashtable<String, Hashtable>();
     //private Hashtable numbers = new Hashtable();
     
     public Dictionary(){
         //Load the dictionarys in the dict folder
-        
+        //maybe later.
+        //for now just load the test one
+        //dictionaries.put("test", 
+              //readDict("/home/felix/word-play/dictionaries/test-6-word.txt"));
     }
     
-    private Hashtable readDict(String fileName){
+    public Hashtable readDict(String fileName){
         Hashtable dictTable = new Hashtable<String, ArrayList<String>>();
         
         try {
@@ -39,15 +42,18 @@ public class Dictionary {
             while ((strLine = dictFile.readLine()) != null)   {
                 wordList.add(strLine.trim());
             }
+            System.out.println(wordList);
             //figure out how many letters is in the words here
-            int wordLength = wordList.get(0).length();
+            int wordLength = wordList.get(0).length()-1;
             //throw errors if there are different amounts of letters
             //put words into a hashtable where one word differences are the values.
             String curWord;
             ArrayList<String> curMatchList = new ArrayList<String>();
             for (int i=0;i<wordList.size();i++){
                 curWord = wordList.get(i);
+                System.out.println("we're on: " + curWord);
                 checkWordLength(curWord, wordLength);
+                System.out.println("cool for length");
                 curMatchList = findMatches(curWord, wordList);
                 dictTable.put(curWord, curMatchList);
             }
@@ -71,7 +77,7 @@ public class Dictionary {
     
     private static void checkWordLength(String word, int thisLength) 
             throws WordLengthException{
-        if (word.length() != thisLength){
+        if (word.length()-1 != thisLength){
             throw new WordLengthException();
         }
     }
@@ -87,14 +93,17 @@ public class Dictionary {
         ArrayList<String> matchList = new ArrayList<String>();
         String curWord;
         int wrongLetters;
+        System.out.println("finding matches for: " + word +"");
         for (int i = 0;i<wordList.size();i++){
             wrongLetters = 0;
             curWord = wordList.get(i);
-            for (int i2 = 0; i<word.length();i2++){
+            System.out.println("checking word: " + curWord); 
+            for (int i2 = 0; i2<word.length();i2++){
                 if (curWord.charAt(i2) != word.charAt(i2)){
                    wrongLetters++;
                 }
                 if (wrongLetters>1){
+                    System.out.println("nope, not good word.");
                     break;
                 }
             }
@@ -104,8 +113,4 @@ public class Dictionary {
         }
         return matchList;
     }
-}
-
-class Vertex{
-    
 }
