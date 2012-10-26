@@ -11,15 +11,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import wordplay.Dictionary;
+import wordplay.DictionaryManager;
 
 /**
  *
  * @author felix
  */
-public class DictionaryTest {
+public class DictionaryManagerTest {
     
-    public DictionaryTest() {
+    public DictionaryManagerTest() {
     }
 
     @BeforeClass
@@ -45,7 +45,7 @@ public class DictionaryTest {
     public void testReadDict() {
         System.out.println("readDict");
         String fileName = "/home/felix/word-play/dictionaries/test-6-word.txt";
-        Dictionary instance = new Dictionary();
+        DictionaryManager instance = new DictionaryManager();
         Hashtable expResult = null;
         Hashtable result = instance.readDict(fileName);
         assertEquals(expResult, result);
@@ -58,7 +58,7 @@ public class DictionaryTest {
     public void testGetDict() {
         System.out.println("getDict");
         String dictName = "";
-        Dictionary instance = new Dictionary();
+        DictionaryManager instance = new DictionaryManager();
         Hashtable expResult = null;
         Hashtable result = instance.getDict(dictName);
         assertEquals(expResult, result);

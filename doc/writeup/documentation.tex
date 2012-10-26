@@ -3,6 +3,20 @@
 Assignment 1 - Word Play - Making word ladders}
 \date{\today}
 \author{Felix~Farquharson}
+
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{beramono}
+\usepackage{listings}
+\lstset{
+  language=Java,
+  showstringspaces=false,
+  formfeed=\newpage,
+  tabsize=4,
+  commentstyle=\itshape,
+  basicstyle=\ttfamily,
+  morekeywords={models, lambda, forms}
+}
+
 \begin{document}
 \maketitle
 \tableofcontents
@@ -64,8 +78,10 @@ OR
 output Not possible.
 
 FUNCITON findallwords:
-fistLetterList IS find all words with the same first letter
-secondLetterList IS find all words with the same second letter
+fistLetterList IS find all words with the 
+        same first letter
+secondLetterList IS find all words 
+        with the same second letter
 etc.
 \end{verbatim}
 
@@ -303,7 +319,9 @@ of it's elements are unique so that no results are duplicated
 unnecessarrly.
 
 \section{Testing}
+The testing for this development was largely results driven and
 \subsection{JUnit}
+
 \subsection{Other Testing}
 \subsection{Known Problems}
 
@@ -314,4 +332,10 @@ unnecessarrly.
 \subsubsection{Sample Output}
 
 \section{Source Code and Test Files}
+\subsection{WordPlay.java}
+\lstinputlisting{../../src/wordplay/WordPlay.java}
+\subsection{DictionaryManager.java}
+\lstinputlisting{../../src/wordplay/DictionaryManager.java}
+\subsection{Routing.java}
+\lstinputlisting{../../src/wordplay/Routing.java}
 \end{document}
