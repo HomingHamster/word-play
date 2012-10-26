@@ -40,10 +40,34 @@ public class WordPlay {
                 System.exit(1);
             }
             if (input.equals("2")) {
+                
                 System.out.println(Routing.findRoute(
                         "head", "foot", dictionary.
                         readDict("/home/felix/word-"
                 + "play/dictionaries/dict4.dat")));
+            } else if (input.equals("1")) {
+                System.out.print("Enter a word: ");
+                input = "";
+                try {
+                    input = br.readLine();
+                }
+                catch (IOException ioe) {
+                    System.out.println("IO error trying "
+                            + "to read your input!");
+                    System.exit(1);
+                }
+                if (input.length() == 4) {
+                    Routing.generate(null, input, 0,
+                            5, dictionary.
+                        readDict("/home/felix/word-"
+                + "play/dictionaries/dict4.dat"));
+                } else {
+                    System.out.println("Ran out of"
+                            + " time to impliment "
+                            + "more than 4 letters"
+                            + " but the code is "
+                            + "partically there");
+                }
             }
         }
     }

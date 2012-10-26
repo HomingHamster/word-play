@@ -36,6 +36,37 @@ public class Routing {
         }  
         return route;
     }
+    
+    public static ArrayList<String> generate(
+            ArrayList<String> origonList,
+            String currentWord, int currentStep,
+            int amountOfSteps, Hashtable dict){
+        ArrayList<String> output = 
+                new ArrayList<String>();
+        HashSet<String> toTestList = new HashSet<String>(
+                (ArrayList<String>)dict.get(currentWord));
+        toTestList.removeAll(origonList);
+        
+        if (toTestList.isEmpty()){
+        } else {
+            for (String thisWord:toTestList){
+                if (amountOfSteps == (currentStep+1)){
+                    origonList.add(thisWord);
+                    return origonList;
+                    
+                } else {
+                    origonList.add(currentWord);
+                    return
+                    generate(origonList, thisWord,
+                            (currentStep+1), amountOfSteps,
+                            dict);
+                }
+                
+            }
+        }
+        
+        return output;
+    }
 
     private static ArrayList<ArrayList<String>> 
             findRoutes(ArrayList<String> origonList, 
