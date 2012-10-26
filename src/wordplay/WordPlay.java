@@ -12,8 +12,12 @@ public class WordPlay {
     public static void main(String[] args) {
         Dictionary dictionary = new Dictionary();
         System.out.println("lets try and find a route...");
-        Routing.findRoute("flock", dictionary.readDict("/home/felix/word-"
-                + "play/dictionaries/test-6-word.txt"));
+        System.out.println();
+        System.out.println("WE BUILT THIS CITY!"+
+        dictionary.readDict("/home/felix/word-"
+                + "play/dictionaries/test-6-word.txt").toString());
+        System.out.println(Routing.findRoute("flock", "clack", dictionary.readDict("/home/felix/word-"
+                + "play/dictionaries/test-6-word.txt")));
         
         
     }

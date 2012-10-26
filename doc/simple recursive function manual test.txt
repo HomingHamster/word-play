@@ -1,0 +1,53 @@
+takes listFromOrigonToCurrentWord, currentWord, destination, dict
+
+	toTestList = currentWord's list of assoc words take away listFOTCW
+
+	if list for current word empty
+		return null
+
+	for word in currentWord's list of assoc words
+		if word = destination #woop!
+			return list with currentword and final word in
+		else
+			run this function with (listFOTCW + currentword), 
+				the current word in assoc list,
+				the destination and
+				the dictionary
+			if it returns null we return null too
+			else if it returns a list:
+				put current assoc word on the beginning then return
+
+dict=
+
+click
+clack
+clock
+flock
+
+SUCCESS!!!!
+
+Empty click flock above
+
+assoc = clack clock - (none)
+not empty
+for clack
+got returned (clack clock flock)
+returning (click clack clock flock)
+
+click clack flock above
+
+assoc = click clock - click
+assoc = clock
+not empty
+for clock
+got returned (clock flock)
+returning (clack clock flock)
+
+
+(click clack) clock flock above
+
+assoc =click clack flock - click clack
+assoc = flock
+not empty
+returning (clock flock) #woop
+		
