@@ -1,0 +1,5 @@
+input text from file (list of words seperated by newlines)
+
+take string seperate + add to list of words
+
+
