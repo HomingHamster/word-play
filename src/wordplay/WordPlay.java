@@ -3,6 +3,7 @@ package wordplay;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /**
  *
@@ -57,10 +58,13 @@ public class WordPlay {
                     System.exit(1);
                 }
                 if (input.length() == 4) {
-                    Routing.generate(null, input, 0,
+                    System.out.println(
+                    Routing.generate(
+                            new ArrayList<String>(),
+                            input, 0,
                             5, dictionary.
                         readDict("/home/felix/word-"
-                + "play/dictionaries/dict4.dat"));
+                + "play/dictionaries/dict4.dat")));
                 } else {
                     System.out.println("Ran out of"
                             + " time to impliment "

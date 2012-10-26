@@ -41,10 +41,13 @@ public class Routing {
             ArrayList<String> origonList,
             String currentWord, int currentStep,
             int amountOfSteps, Hashtable dict){
+        
         ArrayList<String> output = 
                 new ArrayList<String>();
+        
         HashSet<String> toTestList = new HashSet<String>(
                 (ArrayList<String>)dict.get(currentWord));
+        
         toTestList.removeAll(origonList);
         
         if (toTestList.isEmpty()){
@@ -56,9 +59,10 @@ public class Routing {
                     
                 } else {
                     origonList.add(currentWord);
+                    currentStep++;
                     return
                     generate(origonList, thisWord,
-                            (currentStep+1), amountOfSteps,
+                            currentStep, amountOfSteps,
                             dict);
                 }
                 
