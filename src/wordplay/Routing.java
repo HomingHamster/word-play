@@ -18,6 +18,8 @@ public class Routing {
         ArrayList<String> route = new ArrayList<String>();
         ArrayList<ArrayList<String>> possibleRoutes;
         possibleRoutes = findRoutes(new ArrayList<String>(), word, word2, dict);
+        System.out.println("We see possible routes: " + 
+                possibleRoutes.toString());
         if (possibleRoutes.isEmpty()){
             route = null;
         }else{
@@ -42,9 +44,10 @@ public class Routing {
         toTestList.removeAll(origonList);
         
         if (toTestList.isEmpty()){
+            System.out.println("value of routes on nullify: "+
+                    routes);
             routes = null;
-        }
-        else{
+        } else {
             for (String thisWord:toTestList){
                 if (thisWord.equals(destination)){
                     tempList.addAll(origonList);
@@ -52,12 +55,12 @@ public class Routing {
                     tempList.add(destination);
                     System.out.println("made it here: " + tempList.toString());
                     routes.add(tempList);
-                    tempList.clear();
-                    break;
+                    
+                    System.out.println("incremental value of routes"+ routes);
                 } else {
                     origonList.add(currentWord);
-                    routes = findRoutes(origonList, thisWord,
-                            destination, dict);
+                    routes.addAll(findRoutes(origonList, thisWord,
+                            destination, dict));
                 }
                 
             }

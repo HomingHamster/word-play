@@ -16,8 +16,15 @@ public class WordPlay {
         System.out.println("WE BUILT THIS CITY!"+
         dictionary.readDict("/home/felix/word-"
                 + "play/dictionaries/test-6-word.txt").toString());
-        System.out.println(Routing.findRoute("flock", "clack", dictionary.readDict("/home/felix/word-"
+        System.out.println(Routing.findRoute("click", "clack", dictionary.readDict("/home/felix/word-"
                 + "play/dictionaries/test-6-word.txt")));
+        
+        while (true){
+            System.out.println("Welcome to word-ladders");
+            System.out.println("Please choose from the following:");
+            System.out.println("(1) Generation (Not yet working)");
+            System.out.println("(2) ");
+        }
         
         
     }
